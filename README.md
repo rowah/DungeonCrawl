@@ -4,6 +4,12 @@ DungeonCrawl is a terminal game where a player must survive a dungeon full of mo
 
 The hero has hit points, which are reduced by taking damage from fighting enemies or falling into traps. When the character reaches zero hit points, the player loses the game. The character’s hit points can be restored by finding healing potions or resting in safe rooms. The challenge is to find the exit room before the hero reaches zero hit points
 
+## Tech Stack
+
+## Lessons Learned
+
+## Features to Add
+
 **TODO: Add description**
 
 ## Installation
