@@ -4,16 +4,16 @@ defmodule DungeonCrawl.Heroes do
   def all,
     do: [
       %Character{
-        name: "Skywalker",
-        description: "Skywalker has strong defense and consistent damage.",
+        name: "Luke Skywalker",
+        description: "Luke Skywalker has strong defense and consistent damage.",
         hit_points: 18,
         max_hit_points: 18,
         damage_range: 4..5,
         attack_description: "a sword"
       },
       %Character{
-        name: "Darth",
-        description: "Darth has both high variability of attack damage and strong health.",
+        name: "Darth Vader",
+        description: "Darth Vader has both high variability of attack damage and strong health.",
         hit_points: 12,
         max_hit_points: 12,
         damage_range: 1..12,
@@ -28,8 +28,8 @@ defmodule DungeonCrawl.Heroes do
         attack_description: "a fireball"
       },
       %Character{
-        name: "Yoda",
-        description: "Rogue has high variability of attack damage.",
+        name: "Master Yoda",
+        description: "Master Yoda has high variability of attack damage.",
         hit_points: 12,
         max_hit_points: 20,
         damage_range: 1..12,
