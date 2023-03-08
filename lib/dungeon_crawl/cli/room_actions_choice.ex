@@ -13,7 +13,7 @@ defmodule DungeonCrawl.CLI.RoomActionsChoice do
 
     chosen_action =
       room_actions
-      #|> Enum.map(fn action -> action.label end)
+      # |> Enum.map(fn action -> action.label end) OR Enum.map(&(&1.name))
       |> display_options()
       |> generate_question()
       |> parse_input()
