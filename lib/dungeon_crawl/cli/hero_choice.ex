@@ -14,7 +14,7 @@ defmodule DungeonCrawl.CLI.HeroChoice do
 
     heroes
     # Enum.map(&(&1.name))
-    |> Enum.map(fn hero -> hero.name end)
+    # |> Enum.map(fn hero -> hero.name end)
     |> display_options()
     |> generate_question()
     |> parse_input()
