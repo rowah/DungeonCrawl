@@ -6,7 +6,8 @@ defmodule DungeonCrawl.CLI.BaseCommands do
     # adds a zero-based index to each element of a list or enumerable. The 1 argument specifies the starting value of the index
     |> Enum.with_index(1)
     |> Enum.each(fn {option, index} ->
-      Shell.info("#{index} - #{DungeonCrawl.Display.info(option)}")
+      # Shell.info("#{index} - #{DungeonCrawl.Display.info(option)}")
+      Shell.info("#{index} - #{option}")
     end)
 
     options
