@@ -22,7 +22,7 @@ defmodule DungeonCrawl.Character do
 
   def take_damage(character, damage) do
     new_hit_points = max(0, character.hit_points - damage)
-    # the %{ map | key: new_value } handy Elixir shortcut syntax updates the values of the struct
+    # the %{ map | key: new_value } shortcut syntax updates the values of the struct
     %{character | hit_points: new_hit_points}
   end
 

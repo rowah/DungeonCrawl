@@ -2,7 +2,7 @@ defmodule DungeonCrawl.Battle do
   alias DungeonCrawl.Character
   alias Mix.Shell.IO, as: Shell
 
-  # check if one of the characters has zero hit points which makes the fight to be over and return a tuple
+  # checks if one of the characters has zero hit points which makes the fight to be over and return a tuple with the chars
   def fight(
         char_a = %{hit_points: hit_points_a},
         char_b = %{hit_points: hit_points_b}
