@@ -3,7 +3,7 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
 
   alias Mix.Shell.IO, as: Shell
 
-  def run(character, %DungeonCrawl.Room.Action{id: :forward}) do
+  def run(character, %DungeonCrawl.Room.Action{id: :forwards}) do
     # takes a random enemy from the list of enemies
     villain = Enum.random(DungeonCrawl.Villains.all())
 
