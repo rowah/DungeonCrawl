@@ -15,6 +15,6 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
     {updated_char, _enemy} = DungeonCrawl.Battle.fight(character, villain)
 
     # returns the updated character after the battle, and the flag forward indicating the player hasn’t found the exit yet
-    {updated_char, :forward}
+    {updated_char, :forwards}
   end
 end
