@@ -12,7 +12,7 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
     Shell.info("You were prepared and attacked first")
 
     # invokes DungeonCrawl.Battle.fight/2, passing the hero and the villain
-    {updated_char, _enemy} = DungeonCrawl.Battle.fight(character, villain)
+    {updated_char, _villain} = DungeonCrawl.Battle.fight(character, villain)
 
     # returns the updated character after the battle, and the flag forward indicating the player hasn’t found the exit yet
     {updated_char, :forwards}
