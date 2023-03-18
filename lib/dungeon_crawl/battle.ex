@@ -29,7 +29,7 @@ defmodule DungeonCrawl.Battle do
     |> Shell.info()
 
     char_b_after_damage
-    |> attack_message(damage)
+    |> receive_message(damage)
     |> Shell.info()
 
     char_b_after_damage
