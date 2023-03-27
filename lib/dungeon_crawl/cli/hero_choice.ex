@@ -8,6 +8,7 @@ defmodule DungeonCrawl.CLI.HeroChoice do
 
     heroes = DungeonCrawl.Heroes.all()
     # find_hero_by_index = &Enum.at(heroes, &1)
+    # returns the element of a given enumerable collection at the specified index
     find_hero_by_index = fn index ->
       Enum.at(heroes, index)
     end

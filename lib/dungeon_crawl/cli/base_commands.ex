@@ -20,6 +20,7 @@ defmodule DungeonCrawl.CLI.BaseCommands do
 
   def parse_input(input) do
     {option, _} = Integer.parse(input)
+    # factors zero indexing
     option - 1
   end
 end

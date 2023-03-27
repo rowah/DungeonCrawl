@@ -11,7 +11,7 @@ defmodule DungeonCrawl.CLI.Main do
 
   defp hero_choice do
     hero = DungeonCrawl.CLI.HeroChoice.start()
-    # changes the chosen hero name to you
+    # changes the chosen hero name to you (makes you feel right in the game)
     %{hero | name: "You"}
   end
 
@@ -51,8 +51,10 @@ defmodule DungeonCrawl.CLI.Main do
     room.trigger.run(character, action)
   end
 
+  # gets called if the room trigger action callback returns a tuple whose atom is :exit
   defp handle_action_result({_, :exit}),
     do: Shell.info("You found the exit. You won the game. Congratulations!")
 
+  # gets called if the atom is anything other than :exit
   defp handle_action_result({character, _}), do: crawl(character, DungeonCrawl.Room.all())
 end
