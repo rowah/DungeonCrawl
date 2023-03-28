@@ -18,6 +18,11 @@ defmodule DungeonCrawl.Room do
         description: "You can see the enemy has blocked your path.",
         actions: [forward(), rest(), search()],
         trigger: Triggers.Villain
+      },
+      %Room{
+        description: "You are walking cautiously and can see the next room",
+        actions: [forward(), rest(), search()],
+        trigger: Triggers.Treasure
       }
     ]
 end
