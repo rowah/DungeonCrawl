@@ -16,7 +16,7 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
     {updated_char, _villain} = DungeonCrawl.Battle.fight(character, villain)
 
     # returns the updated character after the battle, and the flag forward indicating the player hasn’t found the exit yet
-    {updated_char, :forwards}
+    {updated_char, :forward}
   end
 
   def run(character, %Action{id: :search}) do
@@ -24,11 +24,11 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
 
     Shell.info("You search the room looking for something useful")
     Shell.info("You waste time searching after a fight and find nothing")
-    Shell.info("You waste #{damage} healing points")
+    Shell.info("You waste #{damage} hit points")
 
     {
       DungeonCrawl.Character.take_damage(character, damage),
-      :forwards
+      :forward
     }
   end
 end
