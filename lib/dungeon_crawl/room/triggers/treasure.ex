@@ -4,10 +4,10 @@ defmodule DungeonCrawl.Room.Triggers.Treasure do
   @behaviour DungeonCrawl.Room.Trigger
   alias Mix.Shell.IO, as: Shell
 
-  # def run(character, %Action{id: :forward}) do
-  #   Shell.info()
-  #   {character, :forward}
-  # end
+  def run(character, %Action{id: :forwards}) do
+    Shell.info("You get into the room")
+    {character, :forwards}
+  end
 
   def run(character, %Action{id: :search}) do
     healing = 5
@@ -17,7 +17,7 @@ defmodule DungeonCrawl.Room.Triggers.Treasure do
 
     {
       DungeonCrawl.Character.heal(character, healing),
-      :forward
+      :forwards
     }
   end
 end
