@@ -4,7 +4,7 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
 
   alias Mix.Shell.IO, as: Shell
 
-  def run(character, %Action{id: :forwards}) do
+  def run(character, %Action{id: :forward}) do
     # takes a random enemy from the list of enemies
     villain = Enum.random(DungeonCrawl.Villains.all())
 
@@ -16,7 +16,7 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
     {updated_char, _villain} = DungeonCrawl.Battle.fight(character, villain)
 
     # returns the updated character after the battle, and the flag forward indicating the player hasn’t found the exit yet
-    {updated_char, :forwards}
+    {updated_char, :forward}
   end
 
   def run(character, %Action{id: :search}) do
@@ -34,6 +34,6 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
 
     {updated_char, _villain} = DungeonCrawl.Battle.fight(updated_charr, villain)
 
-    {updated_char, :forwards}
+    {updated_char, :forward}
   end
 end

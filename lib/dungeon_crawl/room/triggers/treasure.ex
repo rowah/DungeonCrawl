@@ -4,12 +4,12 @@ defmodule DungeonCrawl.Room.Triggers.Treasure do
   @behaviour DungeonCrawl.Room.Trigger
   alias Mix.Shell.IO, as: Shell
 
-  def run(character, %Action{id: :forwards}) do
+  def run(character, %Action{id: :forward}) do
     Shell.info(
       "You have decided not to look for any useful treasure that mya contain healing points to boost your health"
     )
 
-    {character, :forwards}
+    {character, :forward}
   end
 
   def run(character, %Action{id: :search}) do
@@ -20,7 +20,7 @@ defmodule DungeonCrawl.Room.Triggers.Treasure do
 
     {
       DungeonCrawl.Character.heal(character, healing),
-      :forwards
+      :forward
     }
   end
 
@@ -34,7 +34,7 @@ defmodule DungeonCrawl.Room.Triggers.Treasure do
 
     {
       DungeonCrawl.Character.heal(character, healing),
-      :forwards
+      :forward
     }
   end
 end
