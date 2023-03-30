@@ -6,11 +6,6 @@ defmodule DungeonCrawl.Room.Triggers.HiddenVillain do
   alias Mix.Shell.IO, as: Shell
 
   def run(character, %Action{id: :forwards}) do
-    Shell.info("You have spotted the next available room and are walking cautiously toward it")
-    {character, :search}
-  end
-
-  def run(character, %Action{id: :search}) do
     villain = Enum.random(DungeonCrawl.Villains.all())
     Shell.info("You have found a quiet place and decide to take a rest")
     Shell.info(villain.description)
@@ -23,4 +18,8 @@ defmodule DungeonCrawl.Room.Triggers.HiddenVillain do
 
     {updated_char, :forward}
   end
+
+  # def run(character, %Action{id: :search}) do
+
+  # end
 end

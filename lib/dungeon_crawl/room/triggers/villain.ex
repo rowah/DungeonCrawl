@@ -20,15 +20,20 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
   end
 
   def run(character, %Action{id: :search}) do
+    villain = Enum.random(DungeonCrawl.Villains.all())
     damage = 3
 
-    Shell.info("You search the room looking for something useful")
-    Shell.info("You waste time searching after a fight and find nothing")
-    Shell.info("You waste #{damage} hit points")
+    Shell.info(
+      "You evade the enemy to search the room to try and boost your health before fighting"
+    )
 
-    {
-      DungeonCrawl.Character.take_damage(character, damage),
-      :forwards
-    }
+    Shell.info("Your search bears no fruit and the enemy #{villain.name} attacks")
+    Shell.info("You waste #{damage} hit points during the search")
+
+    updated_charr = DungeonCrawl.Character.take_damage(character, damage)
+
+    {updated_char, _villain} = DungeonCrawl.Battle.fight(updated_charr, villain)
+
+    {updated_char, :forwards}
   end
 end
