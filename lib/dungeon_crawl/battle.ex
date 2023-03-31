@@ -36,6 +36,9 @@ defmodule DungeonCrawl.Battle do
     char_b_after_damage
   end
 
+  def reverse_attack(%{hit_points: hit_points_b}, character_a) when hit_points_b == 0,
+    do: character_a
+
   def reverse_attack(char_a, char_b) do
     # gives a random damage within the attacker's damage range
     damage = Enum.random(char_b.damage_range)

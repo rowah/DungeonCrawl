@@ -9,7 +9,15 @@ defmodule DungeonCrawl.Room.Triggers.Treasure do
       "You have decided not to look for any useful treasure that mya contain healing points to boost your health"
     )
 
-    {character, :forward}
+    healing = 8
+    Shell.info("You search the room looking for something useful")
+    Shell.info("You find a treasure box with a healing potion inside")
+    Shell.info("You drink the potion and restore #{healing} hit points.")
+
+    {
+      DungeonCrawl.Character.heal(character, healing),
+      :forward
+    }
   end
 
   def run(character, %Action{id: :search}) do
