@@ -36,4 +36,16 @@ defmodule DungeonCrawl.Room.Triggers.Villain do
 
     {updated_char, :forward}
   end
+
+  def run(character, %Action{id: :rest}) do
+    villain = Enum.random(DungeonCrawl.Villains.all())
+
+    Shell.info("You have decided you want to take a rest in the presence of the enemy!")
+
+    Shell.info("The enemy #{villain.name} will not let you rest and decides to pursue!")
+
+    {updated_char, _villain} = DungeonCrawl.Battle.fight(character, villain)
+
+    {updated_char, :forward}
+  end
 end
